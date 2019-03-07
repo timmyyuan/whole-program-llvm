@@ -1,6 +1,5 @@
 ![WLLVM](img/dragon128x128.png?raw_true)Whole Program LLVM
 ==================
-[![PyPI version](https://badge.fury.io/py/wllvm.svg)](https://badge.fury.io/py/wllvm)
 [![Build Status](https://travis-ci.org/SRI-CSL/whole-program-llvm.svg?branch=master)](https://travis-ci.org/SRI-CSL/whole-program-llvm)
 
 
@@ -33,47 +32,6 @@ of a build process requires that.
 
 WLLVM works with either clang or the gcc dragonegg plugin. If you are not interested in dragonegg support,
 and speed is an issue for you, you may want to try out [gllvm.](https://github.com/SRI-CSL/gllvm)
-
-Installation
-------------
-
-As of August 2016 WLLVM is now a pip package. You can just do:
-
-    pip install wllvm
-
-or
-
-    sudo pip install wllvm
-
-depending on your machine's permissions.
-
-
-Tutorial
-=======
-If you want to develop or use the development version:
-
-```
-git clone https://github.com/travitch/whole-program-llvm
-cd whole-program-llvm
-```
-
-Now you need to install WLLVM. You can either install
-globally on your system in develop mode:
-
-```
-sudo pip install -e .
-```
-
-or install WLLVM into a virtual python environment
-in develop mode to avoid installing globally:
-
-```
-virtualenv venv
-source venv/bin/activate
-pip install -e .
-```
-
-
 
 Usage
 -----
