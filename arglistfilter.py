@@ -143,6 +143,7 @@ class ArgumentListFilter(object):
             # Debug
             '-g' : (0, ArgumentListFilter.compileUnaryCallback),
             '-g0' : (0, ArgumentListFilter.compileUnaryCallback),     #iam: clang not gcc
+            '-g3' : (0, ArgumentListFilter.compileUnaryCallback),
             '-ggdb' : (0, ArgumentListFilter.compileUnaryCallback),
             '-ggdb3' : (0, ArgumentListFilter.compileUnaryCallback),
             '-gdwarf-2' : (0, ArgumentListFilter.compileUnaryCallback),
@@ -328,7 +329,8 @@ class ArgumentListFilter(object):
                 # If no action has been specified, this is a zero-argument
                 # flag that we should just keep.
                 if not matched:
-                    _logger.warning('Did not recognize the compiler flag "%s"', currentItem)
+                    # Ignore warning
+                    # _logger.warning('Did not recognize the compiler flag "%s"', currentItem)
                     self.compileUnaryCallback(currentItem)
 
         if DUMPING:

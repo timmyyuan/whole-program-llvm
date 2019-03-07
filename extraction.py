@@ -10,17 +10,17 @@ import shutil
 import argparse
 import codecs
 
-from .popenwrapper import Popen
+from popenwrapper import Popen
 
-from .compilers import llvmCompilerPathEnv
-from .compilers import elfSectionName
-from .compilers import darwinSegmentName
-from .compilers import darwinSectionName
-from .compilers import getHashedPathName
+from compilers import llvmCompilerPathEnv
+from compilers import elfSectionName
+from compilers import darwinSegmentName
+from compilers import darwinSectionName
+from compilers import getHashedPathName
 
-from .filetype import FileType
+from filetype import FileType
 
-from .logconfig import logConfig
+from logconfig import logConfig
 
 
 _logger = logConfig(__name__)

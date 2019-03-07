@@ -8,11 +8,11 @@ import tempfile
 import hashlib
 
 from shutil import copyfile
-from .filetype import FileType
-from .popenwrapper import Popen
-from .arglistfilter import ArgumentListFilter
+from filetype import FileType
+from popenwrapper import Popen
+from arglistfilter import ArgumentListFilter
 
-from .logconfig import logConfig
+from logconfig import logConfig
 
 # Internal logger
 _logger = logConfig(__name__)
@@ -30,7 +30,7 @@ def wcompile(mode):
 
     try:
         cmd = list(sys.argv)
-        cmd = cmd[1:]
+        cmd = cmd[1:] + ['-O0', '-g3']
         builder = getBuilder(cmd, mode)
 
         af = builder.getBitcodeArglistFilter()
@@ -237,6 +237,7 @@ class DragoneggBuilder(BuilderBase):
 def getBuilder(cmd, mode):
     compilerEnv = 'LLVM_COMPILER'
     cstring = os.getenv(compilerEnv)
+    cstring = cstring if cstring else 'clang'
     pathPrefix = os.getenv(llvmCompilerPathEnv) # Optional
     _logger.debug('WLLVM compiler using %s', cstring)
     if pathPrefix:

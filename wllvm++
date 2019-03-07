@@ -10,7 +10,7 @@ into a library or executable.
 
 import sys
 
-from .compilers import wcompile
+from compilers import wcompile
 
 
 def main():

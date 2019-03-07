@@ -24,7 +24,7 @@ from __future__ import absolute_import
 
 import sys
 
-from .extraction import extraction
+from extraction import extraction
 
 def main():
     """ The entry point to extract-bc.
